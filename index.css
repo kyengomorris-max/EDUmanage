@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: 30 64 175;
+  --bg: 244 246 251;
+  --card: 255 255 255;
+  --text: 15 23 42;
+  --muted: 90 102 122;
+  --border: 221 227 239;
+  --navy: 15 28 54;
+  --accent: 109 91 208;
+  --success: 21 128 61;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: 8 12 22;
+  --card: 24 34 62;
+  --text: 236 240 248;
+  --muted: 176 188 210;
+  --border: 62 80 122;
+  --navy: 8 14 28;
+  --accent: 167 149 232;
+  --success: 74 222 128;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { min-height: 100%; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(900px 420px at 100% -10%, rgb(var(--accent) / 0.08), transparent 55%),
+    radial-gradient(700px 380px at -10% 0%, rgb(var(--primary) / 0.08), transparent 50%),
+    rgb(var(--bg));
+  color: rgb(var(--text));
+  font-family: Manrope, "Segoe UI", sans-serif;
+}
+:focus-visible {
+  outline: 2px solid rgb(var(--primary));
+  outline-offset: 2px;
+}
+.skip {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  background: rgb(var(--card));
+  color: rgb(var(--text));
+  padding: 0.5rem 0.75rem;
+  z-index: 50;
+  border-radius: 0.75rem;
+}
+.skip:focus { top: 1rem; }
+
+.page-in { animation: rise 0.4s ease; }
+.panel-in { animation: rise 0.35s ease; }
+@keyframes rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-in, .panel-in { animation: none; }
+}
+
+table thead th {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 650;
+}
+
+@media print {
+  aside, header, .no-print { display: none !important; }
+  main { margin: 0 !important; }
+  body { background: white; }
+}

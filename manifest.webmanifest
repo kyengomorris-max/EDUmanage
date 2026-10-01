@@ -1,0 +1,12 @@
+{
+  "name": "EduManage",
+  "short_name": "EduManage",
+  "description": "Smarter School Management. Better Learning.",
+  "start_url": "/app",
+  "display": "standalone",
+  "background_color": "#F8FAFC",
+  "theme_color": "#2563EB",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
